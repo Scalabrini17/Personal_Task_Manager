@@ -1,7 +1,10 @@
 {% extends 'base/base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-PAGINA PARA MOSTRAR AS TASK
+<h1> PAGINA PARA MOSTRAR AS TASK </h1>
 
+<a href="{% url 'task:add_task' %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Add new task</a>
 {% endblock %}
