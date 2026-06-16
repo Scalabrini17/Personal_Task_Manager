@@ -9,8 +9,16 @@ class TaskForms(forms.ModelForm):
         ]
         labels = {
             'nome': 'Nome',
-            'descicao': 'Descrição',
+            'descricao': 'Descrição',
             'prazo': 'Prazo',
             'prioridade': 'Prioridade',
             'status': 'Status'
+        }
+
+        widgets = {
+            'nome': forms.TextInput(attrs={'class':'form-control'}),
+            'descricao': forms.TextInput(attrs={'class':'form-control'}),
+            'prazo': forms.DateInput(format= '%d/%m/%Y', attrs={'type': 'date', 'class':'form-control'}),
+            'prioridade': forms.Select(attrs={'class':'form-control'}),
+            'status': forms.Select(attrs={'class':'form-control'}),
         }
