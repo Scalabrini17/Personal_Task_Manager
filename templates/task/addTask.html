@@ -6,48 +6,35 @@
 
 <a class="btn btn-dark" href="{% url 'task:task' %}"> ❮ Voltar </a>
 
-<form class="row g-3 needs-validation" novalidate>
-  <div class="col-md-4">
-    <label for="validationCustom01" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="validationCustom01" placeholder="Nome da sua nova Task" required>
-    <div class="valid-feedback">
-      Looks good!
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <label class="form-label">Nome</label>
+      {{ form.nome }}
     </div>
-  </div>
-  <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Descrição</label>
-    <input type="text" class="form-control" id="validationCustom02" placeholder="Descrição detalhada da task" required>
-    <div class="valid-feedback">
-      Looks good!
+
+    <div class="mb-3">
+      <label class="form-label">Descrição</label>
+      {{ form.descricao }}
     </div>
-  </div>
-  <div class="col-md-4">
-    <label for="validationCustomUsername" class="form-label">Prazo</label>
-    <div class="input-group has-validation">
-      <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid fa-calendar"></i></span>
-      <input type="text" class="form-control" placeholder=" dd/mm/YYYY " id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-      <div class="invalid-feedback">
-        Please choose a username.
-      </div>
+
+    <div class="mb-3">
+      <label class="form-label">Prazo</label>
+      {{ form.prazo }}
     </div>
-  </div>
-  <div class="col-md-3">
-    <label for="validationCustom04" class="form-label">Prioridade</label>
-    {{ form.prioridade }}
-    <div class="invalid-feedback">
-      Please select a valid state.
+
+    <div class="mb-3">
+      <label class="form-label">Prioridade</label>
+      {{ form.prioridade }}
     </div>
-  </div>
-  <div class="col-md-3">
-    <label for="validationCustom04" class="form-label">Status</label>
-    {{ form.status }}
-    <div class="invalid-feedback">
-      Please select a valid state.
+
+    <div class="mb-3">
+      <label class="form-label">Status</label>
+      {{ form.status }}
     </div>
-  </div>
-  <div class="col-12">
-    <button class="btn btn-success" type="submit"> OK </button>
-  </div>
+
+    <button type="submit">OK</button>
 </form>
 
 {% endblock %}

@@ -11,13 +11,26 @@ def view_task(request):
     return render(request, 'task/task.html', context)
 
 def add_task(request):
-    form = TaskForms
     if request.method == "POST":
-        form = TaskForms(request.POST, request.FILES)
+        form = TaskForms(request.POST)
+
         if form.is_valid():
             form.save()
-    
+
+    else:
+        form = TaskForms()
+
     return render(request, 'task/addTask.html', {'form': form})
+
+# def add_task(request):
+#     form = TaskForms
+#     if request.method == "POST":
+#         form = TaskForms(request.POST, request.FILES)
+#         if form.is_valid():
+#             form.save()   
+        
+    
+#     return render(request, 'task/addTask.html', {'form': form})
 
 
 
