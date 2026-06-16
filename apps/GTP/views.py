@@ -22,16 +22,3 @@ def add_task(request):
 
     return render(request, 'task/addTask.html', {'form': form})
 
-# def add_task(request):
-#     form = TaskForms
-#     if request.method == "POST":
-#         form = TaskForms(request.POST, request.FILES)
-#         if form.is_valid():
-#             form.save()   
-        
-    
-#     return render(request, 'task/addTask.html', {'form': form})
-
-
-
-

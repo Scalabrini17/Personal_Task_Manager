@@ -1,5 +1,6 @@
 from django import forms
 from .models import Task
+from .validator import validacao_nome_duplicado
 
 class TaskForms(forms.ModelForm):
     class Meta:
@@ -23,3 +24,10 @@ class TaskForms(forms.ModelForm):
             'status': forms.Select(attrs={'class':'form-select'}),
 
         }
+    def clean_nome(self):
+         valor = self.cleaned_data.get("nome")
+
+         validacao_nome_duplicado(valor)
+
+         return valor
+

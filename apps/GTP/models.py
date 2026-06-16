@@ -13,7 +13,7 @@ class Status(models.TextChoices):
 
 
 class Task(models.Model):
-      nome = models.CharField(max_length = 50)
+      nome = models.CharField(max_length = 50, )
       descricao = models.TextField()
       prazo = models.DateField()
       prioridade = models.CharField(max_length = 20, choices = Prioridade.choices, default = Prioridade.MEDIA)
