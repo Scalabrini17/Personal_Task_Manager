@@ -4,6 +4,8 @@
             min-height: 100vh;
             margin: 0;
             padding: 0;
+            background-color: slategray;
+            color: cornsilk;
             /* ocupa 100% da altura da tela */
         }
 

@@ -9,14 +9,14 @@
 <form class="row g-3 needs-validation" novalidate>
   <div class="col-md-4">
     <label for="validationCustom01" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="validationCustom01" value="Nome da sua nova Task" required>
+    <input type="text" class="form-control" id="validationCustom01" placeholder="Nome da sua nova Task" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Descrição</label>
-    <input type="text" class="form-control" id="validationCustom02" value="Descrição detalhada da task" required>
+    <input type="text" class="form-control" id="validationCustom02" placeholder="Descrição detalhada da task" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -25,7 +25,7 @@
     <label for="validationCustomUsername" class="form-label">Prazo</label>
     <div class="input-group has-validation">
       <span class="input-group-text" id="inputGroupPrepend"><i class="fa-solid fa-calendar"></i></span>
-      <input type="text" class="form-control" value=" dd/mm/YYYY " id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+      <input type="text" class="form-control" placeholder=" dd/mm/YYYY " id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
       <div class="invalid-feedback">
         Please choose a username.
       </div>
@@ -33,20 +33,14 @@
   </div>
   <div class="col-md-3">
     <label for="validationCustom04" class="form-label">Prioridade</label>
-    <select class="form-select" id="validationCustom04" required>
-      <option selected disabled value="">Escolha...</option>
-      <option>...</option>
-    </select>
+    {{ form.prioridade }}
     <div class="invalid-feedback">
       Please select a valid state.
     </div>
   </div>
   <div class="col-md-3">
     <label for="validationCustom04" class="form-label">Status</label>
-    <select class="form-select" id="validationCustom04" required>
-      <option selected disabled value="">Escolha...</option>
-      <option>...</option>
-    </select>
+    {{ form.status }}
     <div class="invalid-feedback">
       Please select a valid state.
     </div>
