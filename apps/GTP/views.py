@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Task
 from .forms import TaskForms
+from django.contrib import messages
+
 
 def view_task(request):
     get_task = Task.objects.all()
@@ -16,6 +18,8 @@ def add_task(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, "Task salva com sucesso")
+            return render(request, 'task/task.html', {'form': form})
 
     else:
         form = TaskForms()
