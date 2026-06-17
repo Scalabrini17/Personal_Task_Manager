@@ -7,4 +7,36 @@
 <h1> PAGINA PARA MOSTRAR AS TASK </h1>
 
 <a href="{% url 'task:add_task' %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Add new task</a>
+
+{% for task in get_task %}
+
+<div class="card mt-3">
+    <div class="card-body">
+        <h5>{{ task.nome }}</h5>
+
+        <p>{{ task.descricao }}</p>
+
+        <p>
+            <strong>Prazo:</strong>
+            {{ task.prazo }}
+        </p>
+
+        <p>
+            <strong>Prioridade:</strong>
+            {{ task.prioridade }}
+        </p>
+
+        <p>
+            <strong>Status:</strong>
+            {{ task.status }}
+        </p>
+    </div>
+</div>
+
+{% empty %}
+
+<p>Nenhuma tarefa cadastrada.</p>
+
+{% endfor %}
+
 {% endblock %}
