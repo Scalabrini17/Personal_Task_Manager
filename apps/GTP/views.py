@@ -34,3 +34,15 @@ def excluir_task(request, id):
     messages.success(request, 'Deleção feita com sucesso!')
     return redirect('task:task')
 
+def editar_task(request, id):
+    task = Task.objects.get(id = id)
+    form = TaskForms(instance = task)
+
+    if request.method == 'POST':
+        form = TaskForms(request.POST, instance = task)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Task editada com suceso!")
+            return redirect('task:task')
+    
+    return render(request, 'task/editar_task.html')
