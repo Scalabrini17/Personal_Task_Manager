@@ -3,6 +3,8 @@ from .models import Task
 from .forms import TaskForms
 from django.contrib import messages
 
+def home(request):
+    return render(request, 'task/home.html')
 
 def view_task(request):
     get_task = Task.objects.all()

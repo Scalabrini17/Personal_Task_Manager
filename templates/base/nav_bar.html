@@ -1,4 +1,8 @@
 {% load static %}
 
-
+<div>
+    <a href="{% url 'task:home' %}" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">home</a>
+    <a class="btn btn-primary" href="{% url 'task:task' %}" role="button">Ir para Task</a>
+    <a href="{% url 'task:add_task' %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Nova Task</a>
+</div>
 
