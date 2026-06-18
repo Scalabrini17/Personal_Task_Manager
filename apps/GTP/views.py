@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Task
 from .forms import TaskForms
 from django.contrib import messages
@@ -21,10 +21,16 @@ def add_task(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Task salva com sucesso")
-            return render(request, 'task/task.html', {'form': form})
+            return redirect('task:task')
 
     else:
         form = TaskForms()
 
     return render(request, 'task/addTask.html', {'form': form})
+
+def excluir_task(request, id):
+    task = Task.objects.get(id = id)
+    task.delete()
+    messages.success(request, 'Deleção feita com sucesso!')
+    return redirect('task:task')
 

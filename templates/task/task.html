@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<h1> PAGINA PARA MOSTRAR AS TASK </h1>
+<h1> PÁGINA PARA MOSTRAR AS TASK </h1>
 
 {% for task in get_task %}
 
@@ -28,6 +28,10 @@
             <strong>Status:</strong>
             {{ task.status }}
         </p>
+
+        <a href="{% url 'task:excluir_task' task.id %}" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">Excluir task</a>
+        <a class="btn btn-success" href="#" role="button">Editar task</a>
+
     </div>
 </div>
 

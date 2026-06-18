@@ -6,5 +6,6 @@ app_name = 'task'
 urlpatterns = [
     path('', views.home, name = 'home'),
     path('task', views.view_task, name = 'task'),
-    path('addTask', views.add_task, name = 'add_task')
+    path('addTask', views.add_task, name = 'add_task'),
+    path('excluirTask/<int:id>/', views.excluir_task, name = 'excluir_task')
 ]
