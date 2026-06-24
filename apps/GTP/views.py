@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Task
 from .forms import TaskForms
 from django.contrib import messages
@@ -45,4 +45,4 @@ def editar_task(request, id):
             messages.success(request, "Task editada com suceso!")
             return redirect('task:task')
     
-    return render(request, 'task/editar_task.html')
+    return render(request, 'task/editar_task.html', {'form': form})
