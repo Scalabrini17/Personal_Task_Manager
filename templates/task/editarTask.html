@@ -6,37 +6,39 @@
 
 <h1> EDITAR TASK </h1>
 
-<a class="btn btn-outline-light" href="{% url 'task:task' %}"> ❮ Voltar </a>
+<a class="btn btn-outline-light mb-3" href="{% url 'task:task' %}"> ❮ Voltar </a>
 
-<form method="POST">
-    {% csrf_token %}
+<div class="card p-4">
+  <form method="POST">
+      {% csrf_token %}
 
-    <div class="mb-3">
-      <label class="form-label">Nome</label>
-      {{ form.nome }}
-    </div>
+      <div class="mb-3">
+        <label class="form-label">Nome</label>
+        {{ form.nome }}
+      </div>
 
-    <div class="mb-3">
-      <label class="form-label">Descrição</label>
-      {{ form.descricao }}
-    </div>
+      <div class="mb-3">
+        <label class="form-label">Descrição</label>
+        {{ form.descricao }}
+      </div>
 
-    <div class="mb-3">
-      <label class="form-label">Prazo</label>
-      {{ form.prazo }}
-    </div>
+      <div class="mb-3">
+        <label class="form-label">Prazo</label>
+        {{ form.prazo }}
+      </div>
 
-    <div class="mb-3">
-      <label class="form-label">Prioridade</label>
-      {{ form.prioridade }}
-    </div>
+      <div class="mb-3">
+        <label class="form-label">Prioridade</label>
+        {{ form.prioridade }}
+      </div>
 
-    <div class="mb-3">
-      <label class="form-label">Status</label>
-      {{ form.status }}
-    </div>
+      <div class="mb-3">
+        <label class="form-label">Status</label>
+        {{ form.status }}
+      </div>
 
-    <button type="submit">OK</button>
-</form>
+      <button type="submit">OK</button>
+  </form>
+</div>
 
 {% endblock %}
