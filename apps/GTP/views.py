@@ -35,14 +35,23 @@ def excluir_task(request, id):
     return redirect('task:task')
 
 def editar_task(request, id):
+    print("ENTROU NA VIEW")
     task = Task.objects.get(id = id)
     form = TaskForms(instance = task)
 
     if request.method == 'POST':
+        print("Recebi um POST")
         form = TaskForms(request.POST, instance = task)
-        if form.is_valid():
+        
+        valido = form.is_valid()
+
+        print("É válido?", valido)
+        print("Erros:", form.errors)
+
+        if valido:
+            print("FORMULÁRIO VÁLIDO")
             form.save()
-            messages.success(request, "Task editada com suceso!")
+            messages.success(request, "Task editada com sucesso!")
             return redirect('task:task')
     
     return render(request, 'task/editarTask.html', {'form': form})
