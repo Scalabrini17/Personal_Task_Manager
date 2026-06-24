@@ -43,3 +43,14 @@
             0% { background-position: 0% center; }
             100% { background-position: 200% center; }
         }    
+
+        .card {
+            background-color: rgba(0, 0, 128, 0.356);
+            color: cornsilk;
+            border: 1px solid #a805f3;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }

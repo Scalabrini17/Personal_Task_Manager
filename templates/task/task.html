@@ -4,41 +4,71 @@
 
 {% block content %}
 
-<h1> PÁGINA PARA MOSTRAR AS TASK </h1>
+<h1 class="mb-4">TASK</h1>
 
-{% for task in get_task %}
+<div class="row">
 
-<div class="card mt-3">
-    <div class="card-body">
-        <h5>{{ task.nome }}</h5>
+    {% for task in get_task %}
 
-        <p>{{ task.descricao }}</p>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow">
 
-        <p>
-            <strong>Prazo:</strong>
-            {{ task.prazo }}
-        </p>
+            <h5>{{ task.nome }}</h5>
 
-        <p>
-            <strong>Prioridade:</strong>
-            {{ task.prioridade }}
-        </p>
+            <p>{{ task.descricao }}</p>
 
-        <p>
-            <strong>Status:</strong>
-            {{ task.status }}
-        </p>
+            <p>
+                <strong>Prazo:</strong>
+                {{ task.prazo }}
+            </p>
 
-        <a href="{% url 'task:excluir_task' task.id %}" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">Excluir task</a>
-        <a class="btn btn-success" href="{% url 'task:editar_task' task.id %}" role="button">Editar task</a>
+            <p>
+                <strong>Prioridade:</strong>
+                {{ task.prioridade }}
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                {{ task.status }}
+            </p>
+
+            <div class="d-flex gap-2">
+                <a href="{% url 'task:excluir_task' task.id %}" class="btn btn-outline-danger">
+                    Excluir
+                </a>
+
+                <a href="{% url 'task:editar_task' task.id %}" class="btn btn-outline-success">
+                    Editar
+                </a>
+
+                <a href="#" class="btn btn-outline-warning">
+                    visualizar
+                </a>
+
+            </div>
+
+        </div>
+
+            <!-- aqui o botão fica fora do quadrado, é uma boa -->
+            <!-- <div class="d-flex gap-2">
+                <a href="{% url 'task:excluir_task' task.id %}" class="btn btn-danger">
+                    Excluir
+                </a>
+
+                <a href="{% url 'task:editar_task' task.id %}" class="btn btn-success">
+                    Editar
+                </a>
+            </div> -->
+
 
     </div>
+
+    {% empty %}
+
+    <p>Nenhuma tarefa cadastrada.</p>
+
+    {% endfor %}
+
 </div>
-
-{% empty %}
-
-<p>Nenhuma tarefa cadastrada.</p>
-
-{% endfor %}
 
 {% endblock %}
