@@ -15,7 +15,10 @@
 
             <h5>{{ task.nome }}</h5>
 
-            <p>{{ task.descricao }}</p>
+            <p>
+                <strong>Descrição:</strong>
+                {{ task.descricao|truncatechars:30 }}
+            </p>
 
             <p>
                 <strong>Prazo:</strong>
@@ -37,11 +40,11 @@
                     Excluir
                 </a>
 
-                <a href="{% url 'task:editar_task' task.id %}" class="btn btn-outline-success">
+                <a href="{% url 'task:editarTask' task.id %}" class="btn btn-outline-success">
                     Editar
                 </a>
 
-                <a href="#" class="btn btn-outline-warning">
+                <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning">
                     visualizar
                 </a>
 
@@ -55,7 +58,7 @@
                     Excluir
                 </a>
 
-                <a href="{% url 'task:editar_task' task.id %}" class="btn btn-success">
+                <a href="{% url 'task:editarTask' task.id %}" class="btn btn-success">
                     Editar
                 </a>
             </div> -->

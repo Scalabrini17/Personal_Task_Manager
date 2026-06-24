@@ -45,4 +45,8 @@ def editar_task(request, id):
             messages.success(request, "Task editada com suceso!")
             return redirect('task:task')
     
-    return render(request, 'task/editar_task.html', {'form': form})
+    return render(request, 'task/editarTask.html', {'form': form})
+
+def visualizar_task(request, id):
+    task = Task.objects.get(id = id)
+    return render(request, 'task/visualizarTask.html', {'task': task})

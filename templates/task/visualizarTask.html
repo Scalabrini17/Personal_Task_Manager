@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 class="mb-4">VISUALIZAR TASK</h1>
+
+<a class="btn btn-outline-light mb-4"  href="{% url 'task:task' %}">
+    ❮ Voltar
+</a>
+
+<div class="card p-4">
+
+    <h2>{{ task.nome }}</h2>
+
+    <hr>
+
+    <h5>Descrição</h5>
+    <p>{{ task.descricao }}</p>
+
+    <h5>Prazo</h5>
+    <p>{{ task.prazo }}</p>
+
+    <h5>Prioridade</h5>
+    <p>{{ task.get_prioridade_display }}</p>
+
+    <h5>Status</h5>
+    <p>{{ task.get_status_display }}</p>
+
+</div>
+
+{% endblock %}
