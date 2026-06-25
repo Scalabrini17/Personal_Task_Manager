@@ -80,7 +80,9 @@ Personal_Task_Manager/
 │       ├── editar_task.html
 │       ├── home.html
 │       ├── login.html
-│       └── task.html 
+│       ├── task.html
+│       ├── taskFinalizada.html
+│       └── visualizartask.html 
 │
 ├── static/
 │   └── CSS
@@ -154,16 +156,18 @@ Certifique-se de ter o [Python](https://www.python.org/downloads/) e o [Git](htt
 
 ---
 
-## 🔮 Melhorias Futuras
+## 🔮 Updates Futuros
 
-O projeto está em evolução. Algumas das melhorias planejadas incluem:
+- Implementar sistema de lixeira: Onde será permitido mover para a lixeira e depois excluir definitivamente
+
+<!-- O projeto está em evolução. Algumas das melhorias planejadas incluem:
 
 - Implementação de um sistema de autenticação e registro de usuários.
 - Isolamento de tarefas por usuário (cada usuário vê apenas suas próprias tarefas).
 - Adição de filtros (por status, prioridade) e barra de busca.
 - Implementação de paginação na listagem de tarefas.
 - Criação de uma API REST utilizando o Django REST Framework.
-- Realização do deploy da aplicação em uma plataforma de nuvem.
+- Realização do deploy da aplicação em uma plataforma de nuvem. -->
 
 ---
 
