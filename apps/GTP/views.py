@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Task
+from .models import Task, Status
 from .forms import TaskForms
 from django.contrib import messages
 
@@ -7,7 +7,7 @@ def home(request):
     return render(request, 'task/home.html')
 
 def view_task(request):
-    get_task = Task.objects.all()
+    get_task = Task.objects.filter(status__in = [Status.EM_ESPERA, Status.INICIADO])
     context = {
         'get_task': get_task,
     }
@@ -59,3 +59,19 @@ def editar_task(request, id):
 def visualizar_task(request, id):
     task = Task.objects.get(id = id)
     return render(request, 'task/visualizarTask.html', {'task': task})
+
+def task_finalizada(request):
+    get_task = Task.objects.filter(status = Status.FINALIZADO)
+    context = {
+        'get_task': get_task,
+    }
+
+    return render(request, 'task/taskFinalizada.html', context)
+
+def finalizar_task(request, id):
+    task = get_object_or_404(Task, id = id)
+    task.status = Status.FINALIZADO
+    task.save()
+
+    messages.success(request, 'Task finalizada com SUCESSO!')
+    return redirect('task:task')

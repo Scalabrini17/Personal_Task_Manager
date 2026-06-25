@@ -1,0 +1,46 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 class="mb-4">TASK FINALIZADA</h1>
+
+<div class="row">
+    {% for task in get_task %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+                <h5>{{ task.nome }}</h5>
+
+                <p>
+                    <strong>Descrição:</strong>
+                    {{ task.descricao|truncatechars:30 }}
+                </p>
+
+                <p>
+                    <strong>Prazo:</strong>
+                    {{ task.prazo }}
+                </p>
+
+                <p>
+                    <strong>Prioridade:</strong>
+                    {{ task.get_prioridade_display }}
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    {{ task.get_status_display }}
+                </p>
+
+                <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar">
+                    <i class="fa-solid fa-eye"></i>
+                </a>
+
+            </div>
+        </div>
+    {% empty %}
+        <p>Nenhuma task finalizada.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
