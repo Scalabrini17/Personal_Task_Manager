@@ -1,7 +1,7 @@
 # Personal Task Manager
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python Version">
+  <img src="https://img.shields.io/badge/Python-3.13-blue.svg" alt="Python Version">
   <img src="https://img.shields.io/badge/Django-6.0.6-092E20.svg" alt="Django Version">
   <img src="https://img.shields.io/badge/Bootstrap-5-563D7C.svg" alt="Bootstrap Version">
   <img src="https://img.shields.io/badge/Database-SQLite3-003B57.svg" alt="Database">
