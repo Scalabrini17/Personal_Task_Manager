@@ -17,13 +17,13 @@ main {
 
 nav {
     border-bottom: 5px solid transparent;
-    border-image: linear-gradient(to right, #a805f3, #eb1304) 1;
+    border-image: linear-gradient(to right, #a805f3, #2e0197) 1;
     position: fixed;
 }
 
 footer {
     border-top: 5px solid transparent;
-    border-image: linear-gradient(to right, #a805f3, #eb1304) 1;
+    border-image: linear-gradient(to right, #2e0197, #a805f3) 1;
 }
 
 /* Links e botões */
@@ -44,7 +44,7 @@ select {
 .card {
     background-color: rgba(0, 0, 128, 0.356);
     color: cornsilk;
-    border: 2px solid #a805f3;
+    border: 2px solid #7903af;
     transition: 0.3s;
 
     /* Mãozinha ao passar sobre o card */
