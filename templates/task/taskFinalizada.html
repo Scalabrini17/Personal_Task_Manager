@@ -32,9 +32,11 @@
                     {{ task.get_status_display }}
                 </p>
 
-                <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Task">
-                    <i class="fa-solid fa-eye"></i>
-                </a>
+                <div class="d-flex gap-2">
+                    <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Task">
+                        <i class="fa-solid fa-eye"></i>
+                    </a>
+                </div>
 
             </div>
         </div>

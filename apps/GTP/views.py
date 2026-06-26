@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Task, Status
+from .models import Task, Status, Localizacao
 from .forms import TaskForms
 from django.contrib import messages
 
@@ -7,7 +7,7 @@ def home(request):
     return render(request, 'task/home.html')
 
 def view_task(request):
-    get_task = Task.objects.filter(status__in = [Status.EM_ESPERA, Status.INICIADO])
+    get_task = Task.objects.filter(status__in = [Status.EM_ESPERA, Status.INICIADO], localizacao = Localizacao.ATIVA)
     context = {
         'get_task': get_task,
     }
@@ -61,7 +61,7 @@ def visualizar_task(request, id):
     return render(request, 'task/visualizarTask.html', {'task': task})
 
 def task_finalizada(request):
-    get_task = Task.objects.filter(status = Status.FINALIZADO)
+    get_task = Task.objects.filter(status = Status.FINALIZADO, localizacao = Localizacao.ATIVA)
     context = {
         'get_task': get_task,
     }
@@ -73,5 +73,27 @@ def finalizar_task(request, id):
     task.status = Status.FINALIZADO
     task.save()
 
-    messages.success(request, 'Task finalizada com SUCESSO!')
+    messages.success(request, 'Task finalizada com sucesso!')
     return redirect('task:task')
+
+def mandar_task_lixo(request, id):
+    task = get_object_or_404(Task, id = id)
+    task.localizacao = Localizacao.LIXEIRA
+    task.save()
+    messages.success(request, 'Task movida para a lixeira com sucesso!')
+    return redirect('task:task')
+
+def lixeira_task(request):
+    get_task = Task.objects.filter(localizacao = Localizacao.LIXEIRA)
+    context = {
+        'get_task': get_task,
+    }
+    return render(request, 'task/lixeiraTask.html', context)
+
+def restaurar_task(request, id):
+    task = get_object_or_404(Task, id = id)
+
+    task.localizacao = Localizacao.ATIVA 
+    task.save()
+    messages.success(request, 'Task restaurada com sucesso!')
+    return redirect('task:lixeiraTask')

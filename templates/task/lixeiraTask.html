@@ -1,0 +1,55 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 class="mb-4">LIXEIRA</h1>
+
+<div class="row">
+    {% for task in get_task %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+                <h5>{{ task.nome }}</h5>
+
+                <p>
+                    <strong>Descrição:</strong>
+                    {{ task.descricao|truncatechars:30 }}
+                </p>
+
+                <p>
+                    <strong>Prazo:</strong>
+                    {{ task.prazo }}
+                </p>
+
+                <p>
+                    <strong>Prioridade:</strong>
+                    {{ task.get_prioridade_display }}
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    {{ task.get_status_display }}
+                </p>
+                <div class="d-flex gap-2">
+                    <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Task">
+                        <i class="fa-solid fa-eye"></i>
+                    </a>
+
+                    <a href="{% url 'task:restaurarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Restaurar Task">
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </a>
+
+                    <a href="{% url 'task:excluir_task' task.id %}" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir Permanentemente">
+                        <i class="fa-solid fa-trash-can"> </i> Permanentemente
+                    </a>
+                </div>    
+
+            </div>
+        </div>
+    {% empty %}
+        <p>Nenhuma task na lixeira.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
