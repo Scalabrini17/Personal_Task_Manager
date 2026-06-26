@@ -26,6 +26,7 @@ Este projeto foi concebido com o intuito de aplicar e aprofundar conhecimentos e
 ## 🔄 Últimas Atualizações
 
 - Implementado sistema de lixeira completa, podendo excluir permanetemente e restaurar as tasks mandadas para a lixeira
+- Adicionado template de Home: Tela de Bem Vindo
 ---
 
 ## ✨ Funcionalidades
