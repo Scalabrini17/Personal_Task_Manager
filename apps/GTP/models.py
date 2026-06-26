@@ -7,7 +7,7 @@ class Prioridade(models.TextChoices):
       BAIXA = 'baixa', 'Baixa'
 
 class Status(models.TextChoices):
-      EM_ESPERA =  'em_espera', 'Em Espera'
+      EM_ESPERA =  'em espera', 'Em Espera'
       INICIADO = 'iniciado', 'Iniciado'
       FINALIZADO = 'finalizado', 'Finalizado'
 
