@@ -2,9 +2,30 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Task, Status, Localizacao
 from .forms import TaskForms
 from django.contrib import messages
+import requests
 
 def home(request):
-    return render(request, 'task/home.html')
+    try:
+        response = requests.get('https://api.github.com/repos/Scalabrini17/Personal_Task_Manager/commits')
+
+        response.raise_for_status()
+
+        dados = response.json()
+
+        if dados:
+            ultimo_commit = (dados[0]["commit"]["message"])
+        else:
+            ultimo_commit = 'Não existem novas atualizações :('
+
+    except requests.exceptions.RequestException:
+        print('Não foi possivel consultar o GitHub')
+        ultimo_commit = 'Não foi possível consultar o GitHub.'
+
+    context = {
+        'ultimo_commit': ultimo_commit
+    }
+
+    return render(request, 'task/home.html', context)
 
 def view_task(request):
     get_task = Task.objects.filter(status__in = [Status.EM_ESPERA, Status.INICIADO], localizacao = Localizacao.ATIVA)
