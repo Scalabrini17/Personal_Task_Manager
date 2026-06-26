@@ -23,6 +23,10 @@ Este projeto foi concebido com o intuito de aplicar e aprofundar conhecimentos e
 - **Validações Customizadas:** Prevenção de duplicação de tarefas com validações específicas.
 
 ---
+## 🔄 Últimas Atualizações
+
+- Implementado sistema de lixeira completa, podendo excluir permanetemente e restaurar as tasks mandadas para a lixeira
+---
 
 ## ✨ Funcionalidades
 
@@ -158,7 +162,7 @@ Certifique-se de ter o [Python](https://www.python.org/downloads/) e o [Git](htt
 
 ## 🔮 Updates Futuros
 
-- Implementar sistema de lixeira: Onde será permitido mover para a lixeira e depois excluir definitivamente
+- Reorganizar alguns campos que estão faltando na edição das tasks
 
 <!-- O projeto está em evolução. Algumas das melhorias planejadas incluem:
 
