@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<h1 class="mb-4">VISUALIZAR TASK</h1>
+<h1 class="mb-4">VISUALIZAR TAREFA</h1>
 
 <a class="btn btn-outline-light mb-4"  href="{% url 'task:task' %}">
     ❮ Voltar
@@ -32,15 +32,15 @@
 
 <div class="d-flex gap-2">
 
-    <a href="{% url 'task:editarTask' task.id %}" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar task">
+    <a href="{% url 'task:editarTask' task.id %}" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar tarefa">
         <i class="fa-solid fa-pen"></i>
     </a>
 
-    <a href="{% url 'task:mandarTaskLixo' task.id %}" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Mover Task para Lixeira">
+    <a href="{% url 'task:mandarTaskLixo' task.id %}" class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Mover Tarefa para Lixeira">
         <i class="fa-solid fa-trash-can"></i>
     </a>
 
-    <a href="{% url 'task:finalizarTask' task.id %}" class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Finalizar task">
+    <a href="{% url 'task:finalizarTask' task.id %}" class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Finalizar tarefa">
         <i class="fa-solid fa-circle-check"></i>
     </a>
 

@@ -32,11 +32,11 @@
                     {{ task.get_status_display }}
                 </p>
                 <div class="d-flex gap-2">
-                    <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Task">
+                    <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Tarefa">
                         <i class="fa-solid fa-eye"></i>
                     </a>
 
-                    <a href="{% url 'task:restaurarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Restaurar Task">
+                    <a href="{% url 'task:restaurarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Restaurar Tarefa">
                         <i class="fa-solid fa-rotate-left"></i>
                     </a>
 
@@ -48,7 +48,7 @@
             </div>
         </div>
     {% empty %}
-        <p>Nenhuma task na lixeira.</p>
+        <p>Nenhuma tarefa na lixeira.</p>
     {% endfor %}
 </div>
 

@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<h1 class="mb-4">TASK</h1>
+<h1 class="mb-4">TAREFAS</h1>
 
 <div class="row">
 
@@ -37,11 +37,11 @@
 
             <div class="d-flex gap-2">
 
-                <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Task">
+                <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Tarefa">
                     <i class="fa-solid fa-eye"></i>
                 </a>
 
-                <a href="{% url 'task:editarTask' task.id %}" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar task">
+                <a href="{% url 'task:editarTask' task.id %}" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar tarefa">
                     <i class="fa-solid fa-pen"></i>
                 </a>
 

@@ -161,7 +161,16 @@ Certifique-se de ter o [Python](https://www.python.org/downloads/) e o [Git](htt
 
 ## 🔮 Updates Futuros
 
-- Reorganizar alguns campos que estão faltando na edição das tasks
+- Mudança do banco de dados do SQLite para o PostgreSQL.
+- Reorganizar alguns campos que estão faltando na edição das tasks.
+- Fazer um Dashboard para a Home, mostrando das tarefas iniciadas, em andamento, compluidas e na lixeira.
+- Módulo de tarefa: Pesquisa por nome.
+- Módulo de tarefa: Filtros por prioridade.
+- Módulo de tarefa: Filtros por status.
+- Módulo de tarefa: Ordenação por prazo
+- Sistema de autenticação (cada usuário vê apenas suas tarefas).
+
+
 
 <!-- O projeto está em evolução. Algumas das melhorias planejadas incluem:
 

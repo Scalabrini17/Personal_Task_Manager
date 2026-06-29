@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<h1 class="mb-4">TASK FINALIZADA</h1>
+<h1 class="mb-4">TAREFA FINALIZADA</h1>
 
 <div class="row">
     {% for task in get_task %}
@@ -33,7 +33,7 @@
                 </p>
 
                 <div class="d-flex gap-2">
-                    <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Task">
+                    <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Tarefa">
                         <i class="fa-solid fa-eye"></i>
                     </a>
                 </div>
@@ -41,7 +41,7 @@
             </div>
         </div>
     {% empty %}
-        <p>Nenhuma task finalizada.</p>
+        <p>Nenhuma tarefa finalizada.</p>
     {% endfor %}
 </div>
 
