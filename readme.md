@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/Python-3.13-blue.svg" alt="Python Version">
   <img src="https://img.shields.io/badge/Django-6.0.6-092E20.svg" alt="Django Version">
   <img src="https://img.shields.io/badge/Bootstrap-5-563D7C.svg" alt="Bootstrap Version">
-  <img src="https://img.shields.io/badge/Database-SQLite3-003B57.svg" alt="Database">
+  <img src="https://img.shields.io/badge/Database-postgreSQL-003B57.svg" alt="Database">
 </p>
 
 O **Personal Task Manager** é um sistema web intuitivo e organizado para gerenciamento de tarefas, desenvolvido com o framework Django. O projeto permite aos usuários criar, visualizar, editar e excluir tarefas de maneira eficiente, ajudando na organização diária.
@@ -24,7 +24,7 @@ Este projeto foi concebido com o intuito de aplicar e aprofundar conhecimentos e
 
 ---
 ## 🔄 Últimas Atualizações
-
+- Migração do Banco de dados do SQLite(padão django) para postgreSQL
 ---
 
 ## ✨ Funcionalidades
@@ -82,6 +82,7 @@ Personal_Task_Manager/
 │       ├── addTask.html
 │       ├── editar_task.html
 │       ├── home.html
+│       ├── lixeiraTask.html
 │       ├── login.html
 │       ├── task.html
 │       ├── taskFinalizada.html
@@ -161,7 +162,6 @@ Certifique-se de ter o [Python](https://www.python.org/downloads/) e o [Git](htt
 
 ## 🔮 Updates Futuros
 
-- Mudança do banco de dados do SQLite para o PostgreSQL.
 - Reorganizar alguns campos que estão faltando na edição das tasks.
 - Fazer um Dashboard para a Home, mostrando das tarefas iniciadas, em andamento, compluidas e na lixeira.
 - Módulo de tarefa: Pesquisa por nome.
