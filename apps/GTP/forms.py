@@ -19,9 +19,12 @@ class TaskForms(forms.ModelForm):
         widgets = {
             'nome': forms.TextInput(attrs={'class':'form-control'}),
             'descricao': forms.Textarea(attrs={'class': 'form-control','rows': 5}),
-            'prazo': forms.DateInput(format= '%d/%m/%Y', attrs={'type': 'date', 'class':'form-control'}),
+            'prazo': forms.DateInput(format='%Y-%m-%d', attrs={'type': 'date', 'class': 'form-control'}),
             'prioridade': forms.Select(attrs={'class':'form-select'}),
             'status': forms.Select(attrs={'class':'form-select'}),
 
         }
 
+    def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.fields['prazo'].input_formats = ('%Y-%m-%d',)
