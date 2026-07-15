@@ -1,7 +1,67 @@
 {% if messages %}
-    {% for message in messages %}
-        <div class="alert alert{{ message.tags }} auto-close">
-            {{message}}
-        </div>
-    {% endfor %}
+    <div class="notifications">
+
+        {% for message in messages %}
+
+            <div class="notification notification-{{ message.tags }}">
+
+                <button class="notification-close">
+                    &times;
+                </button>
+
+                <div class="notification-content">
+
+                    <div class="notification-left">
+
+                        {% if message.tags == "success" %}
+                            <i class="fa-solid fa-circle-check notification-icon"></i>
+
+                        {% elif message.tags == "error" %}
+                            <i class="fa-solid fa-circle-xmark notification-icon"></i>
+
+                        {% elif message.tags == "warning" %}
+                            <i class="fa-solid fa-triangle-exclamation notification-icon"></i>
+
+                        {% else %}
+                            <i class="fa-solid fa-circle-info notification-icon"></i>
+
+                        {% endif %}
+
+                        <div class="notification-message">
+
+                            <span class="notification-title">
+
+                                {% if message.tags == "success" %}
+                                    Operação realizada
+
+                                {% elif message.tags == "error" %}
+                                    Erro
+
+                                {% elif message.tags == "warning" %}
+                                    Atenção
+
+                                {% else %}
+                                    Informação
+
+                                {% endif %}
+
+                            </span>
+
+                            <span class="notification-text">
+                                {{ message }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="notification-progress notification-progress-{{ message.tags }}"></div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
 {% endif %}

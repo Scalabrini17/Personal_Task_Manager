@@ -1,0 +1,163 @@
+.notifications {
+	position: fixed;
+	top: 95px;
+	right: 25px;
+	width: 360px;
+	z-index: 9999;
+}
+
+.notification {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 15px;
+	border-radius: 12px;
+	padding: 18px 20px;
+	box-shadow: 0 12px 25px rgba(0,0,0,.35), 0 0 12px rgba(0,255,204,.12);
+	animation: slideIn .35s ease;
+	padding-right: 55px;
+	transition:
+		opacity .3s ease,
+		transform .3s ease;
+}
+
+.notification.hide {
+	opacity: 0;
+	transform: translateY(-20px);
+}
+
+.notification-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 15px;
+}
+
+.notification-left {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex: 1;
+}
+
+.notification-icon {
+	font-size: 20px;
+	flex-shrink: 0;
+}
+
+.notification-message {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+.notification-title {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.notification-text {
+	font-size: 14px;
+	font-weight: 400;
+	opacity: .9;
+}
+
+.notification-close {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	width: 30px;
+	height: 30px;
+	border: none;
+	border-radius: 50%;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	opacity: .65;
+	transition: all .25s ease;
+}
+
+.notification-close:hover {
+	opacity: 1;
+	background: rgba(255,255,255,.08);
+	transform: rotate(90deg);
+}
+
+/* Variações por tipo (tags do Django messages) */
+.alert-success {
+	background: #123726;
+	color: #8ef7c0;
+	border-left: 5px solid #1ed760;
+}
+
+.alert-error,
+.alert-danger {
+	background: #3b1d22;
+	color: #ff9f9f;
+	border-left: 5px solid #ff4d4f;
+}
+
+.alert-warning {
+	background: #463c18;
+	color: #ffd666;
+	border-left: 5px solid #f7b500;
+}
+
+.alert-info {
+	background: #132f46;
+	color: #7fd4ff;
+	border-left: 5px solid #00d4ff;
+}
+
+/* Barra de progresso (tempo até fechar) */
+.notification-progress {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	animation: progress 5s linear forwards;
+	animation-play-state: running;
+}
+
+.notification-progress-success {
+	background: #1ed760;
+}
+
+.notification-progress-danger,
+.notification-progress-error {
+	background: #ff4d4f;
+}
+
+.notification-progress-warning {
+	background: #f7b500;
+}
+
+.notification-progress-info {
+	background: #00d4ff;
+}
+
+@keyframes progress {
+	from {
+		width: 100%;
+	}
+
+	to {
+		width: 0%;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

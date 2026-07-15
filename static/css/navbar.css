@@ -1,0 +1,7 @@
+nav {
+    border-bottom: 5px solid transparent;
+    border-image: linear-gradient(to right, #a805f3, #2e0197) 1;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 20;
+}

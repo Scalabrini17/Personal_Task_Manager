@@ -1,0 +1,32 @@
+.sidebar {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 56px);
+    background-color: black;
+    border-right: 3px solid transparent;
+    border-image: linear-gradient(to bottom, #a805f3, #2e0197) 1;
+    padding-top: 1rem;
+    z-index: 10;
+}
+
+.sidebar .nav-link {
+    color: cornsilk;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background: linear-gradient(to right, #a805f3, #2e0197);
+    color: white;
+}
+
+@media (min-width: 768px) {
+    main.container {
+        margin-left: 220px;
+        max-width: calc(100% - 240px);
+    }
+}

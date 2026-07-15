@@ -1,0 +1,7 @@
+footer {
+    border-top: 5px solid transparent;
+    border-image: linear-gradient(to right, #2e0197, #a805f3) 1;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 20;
+}

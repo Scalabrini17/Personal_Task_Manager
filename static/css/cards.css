@@ -1,0 +1,22 @@
+.card-tarefa {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-tarefa .d-flex {
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.card {
+    background-color: rgba(0, 0, 128, 0.356);
+    color: cornsilk;
+    border: 2px solid #7903af;
+    transition: 0.3s;
+    cursor: grab;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}

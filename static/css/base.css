@@ -1,0 +1,33 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background-color: black;
+    color: cornsilk;
+    cursor: default;
+}
+
+main {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Links e botões */
+a,
+button,
+.btn {
+    cursor: pointer;
+}
+
+/* Campos de formulário */
+input,
+textarea,
+select {
+    cursor: text;
+}
