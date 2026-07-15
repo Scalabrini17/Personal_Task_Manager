@@ -10,46 +10,46 @@
 
     {% for task in get_task %}
 
-    <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow">
+    <div class="col-md-3 mb-4">
+        <div class="card card-tarefa h-100 shadow">
 
-            <h5>{{ task.nome }}</h5>
+                    <h5 class="fs-4">{{ task.nome }}</h5>
 
-            <p>
-                <strong>Descrição:</strong>
-                {{ task.descricao|truncatechars:30 }}
-            </p>
+                    <p>
+                        <strong>Descrição:</strong>
+                        {{ task.descricao|truncatechars:50 }}
+                    </p>
 
-            <p>
-                <strong>Prazo:</strong>
-                {{ task.prazo }}
-            </p>
+                    <p>
+                        <strong>Prazo:</strong>
+                        {{ task.prazo }}
+                    </p>
 
-            <p>
-                <strong>Prioridade:</strong>
-                {{ task.prioridade }}
-            </p>
+                    <p>
+                        <strong>Prioridade:</strong>
+                        {{ task.prioridade }}
+                    </p>
 
-            <p>
-                <strong>Status:</strong>
-                {{ task.status }}
-            </p>
+                    <p>
+                        <strong>Status:</strong>
+                        {{ task.status }}
+                    </p>
 
-            <div class="d-flex gap-2">
+                    <div class="d-flex gap-2">
 
-                <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Tarefa">
-                    <i class="fa-solid fa-eye"></i>
-                </a>
+                        <a href="{% url 'task:visualizarTask' task.id %}" class="btn btn-outline-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar Tarefa">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
 
-                <a href="{% url 'task:editarTask' task.id %}" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar tarefa">
-                    <i class="fa-solid fa-pen"></i>
-                </a>
+                        <a href="{% url 'task:editarTask' task.id %}" class="btn btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar tarefa">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
 
-                <!-- Teste para ver se fica melhor em o botão -->
-                <!-- <a href="{% url 'task:finalizarTask' task.id %}" class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Finalizar task">
-                    <i class="fa-solid fa-circle-check"></i>
-                </a> -->
-
+                        <!-- Teste para ver se fica melhor em o botão -->
+                        <!-- <a href="{% url 'task:finalizarTask' task.id %}" class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Finalizar task">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </a> -->
+                    
             </div>
 
         </div>

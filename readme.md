@@ -25,6 +25,8 @@ Este projeto foi concebido com o intuito de aplicar e aprofundar conhecimentos e
 ---
 ## 🔄 Últimas Atualizações
 - Migração do Banco de dados do SQLite(padão django) para postgreSQL
+- Os campos de edição das Tarefas estão funcionando sem limpar quando vai editar. 
+- Melhora visual dos templates e sidebar adicionada
 ---
 
 ## ✨ Funcionalidades
@@ -162,7 +164,6 @@ Certifique-se de ter o [Python](https://www.python.org/downloads/) e o [Git](htt
 
 ## 🔮 Updates Futuros
 
-- Reorganizar alguns campos que estão faltando na edição das tasks.
 - Fazer um Dashboard para a Home, mostrando das tarefas iniciadas, em andamento, compluidas e na lixeira.
 - Módulo de tarefa: Pesquisa por nome.
 - Módulo de tarefa: Filtros por prioridade.
