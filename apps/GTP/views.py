@@ -28,9 +28,21 @@ def home(request):
     return render(request, 'task/home.html', context)
 
 def view_task(request):
-    get_task = Task.objects.filter(status__in = [Status.EM_ESPERA, Status.INICIADO], localizacao = Localizacao.ATIVA)
+
+    task = Task.objects.all().filter(localizacao = Localizacao.ATIVA)
+
+    status = request.GET.get('status', 'todos')
+
+    if status == Status.EM_ESPERA:
+        task = task.filter(status = Status.EM_ESPERA)
+    elif status == Status.INICIADO:
+        task = task.filter(status = Status.INICIADO)
+    elif status == Status.FINALIZADO:
+        task = task.filter(status = Status.FINALIZADO)
+
     context = {
-        'get_task': get_task,
+        'task': task,
+        'status': status
     }
 
     return render(request, 'task/task.html', context)
@@ -81,14 +93,6 @@ def visualizar_task(request, id):
     task = Task.objects.get(id = id)
     return render(request, 'task/visualizarTask.html', {'task': task})
 
-def task_finalizada(request):
-    get_task = Task.objects.filter(status = Status.FINALIZADO, localizacao = Localizacao.ATIVA)
-    context = {
-        'get_task': get_task,
-    }
-
-    return render(request, 'task/taskFinalizada.html', context)
-
 def finalizar_task(request, id):
     task = get_object_or_404(Task, id = id)
     task.status = Status.FINALIZADO
@@ -123,9 +127,9 @@ def dashboard(request):
     task = Task.objects.all()
 
     status = {
-        'em_espera': Task.objects.filter(status = Status.EM_ESPERA).count(),
-        'iniciada': Task.objects.filter(status = Status.INICIADO).count(),
-        'finalizada': Task.objects.filter(status = Status.FINALIZADO).count()
+        'em_espera': Task.objects.filter(status = Status.EM_ESPERA, localizacao = Localizacao.ATIVA).count(),
+        'iniciada': Task.objects.filter(status = Status.INICIADO, localizacao = Localizacao.ATIVA).count(),
+        'finalizada': Task.objects.filter(status = Status.FINALIZADO, localizacao = Localizacao.ATIVA).count()
     }
 
     context = {

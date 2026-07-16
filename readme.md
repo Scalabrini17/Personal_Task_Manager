@@ -24,9 +24,10 @@ Este projeto foi concebido com o intuito de aplicar e aprofundar conhecimentos e
 
 ---
 ## 🔄 Últimas Atualizações
-- Os campos de edição das Tarefas estão funcionando sem limpar quando vai editar. 
 - Melhora visual dos templates e sidebar adicionada
 - Novo recurso de alertas. Uma nova forma do sistema se comunicar com o usuário e o mesmo poder entender o que está acontecendo quando faz uma ação dentro do sistema
+- Dashboard adicionado ao sistema
+- Página de Tarefas agora com filtro de status / Retirado página de tarefas finalizadas
 ---
 
 ## ✨ Funcionalidades
@@ -164,25 +165,11 @@ Certifique-se de ter o [Python](https://www.python.org/downloads/) e o [Git](htt
 
 ## 🔮 Updates Futuros
 
-- Fazer um Dashboard para a Home, mostrando das tarefas iniciadas, em andamento, compluidas e na lixeira.
 - Módulo de tarefa: Pesquisa por nome.
 - Módulo de tarefa: Filtros por prioridade.
-- Módulo de tarefa: Filtros por status.
 - Módulo de tarefa: Ordenação por prazo
-- Sistema de autenticação (cada usuário vê apenas suas tarefas).
-
-
-
-<!-- O projeto está em evolução. Algumas das melhorias planejadas incluem:
-
 - Implementação de um sistema de autenticação e registro de usuários.
 - Isolamento de tarefas por usuário (cada usuário vê apenas suas próprias tarefas).
-- Adição de filtros (por status, prioridade) e barra de busca.
-- Implementação de paginação na listagem de tarefas.
-- Criação de uma API REST utilizando o Django REST Framework.
-- Realização do deploy da aplicação em uma plataforma de nuvem. -->
-
----
 
 ## 👨‍💻 Autor
 

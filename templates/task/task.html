@@ -6,9 +6,29 @@
 
 <h1 class="mb-4">TAREFAS</h1>
 
+<div class="d-flex gap-2 mb-4 flex-wrap">
+
+    <a href="{% url 'task:task' %}?status=todos" class="btn btn-outline-secondary {% if status == 'todos' %}active{% endif %}">
+        <i class="fa-solid fa-list"></i> Todos
+    </a>
+
+    <a href="{% url 'task:task' %}?status=em espera" class="btn btn-outline-warning {% if status == 'em espera' %}active{% endif %}">
+        <i class="fa-solid fa-hourglass-half"></i> Em Espera
+    </a>
+
+    <a href="{% url 'task:task' %}?status=iniciado" class="btn btn-outline-primary {% if status == 'iniciado' %}active{% endif %}">
+        <i class="fa-solid fa-spinner"></i> Iniciado
+    </a>
+
+    <a href="{% url 'task:task' %}?status=finalizado" class="btn btn-outline-success {% if status == 'finalizado' %}active{% endif %}">
+        <i class="fa-solid fa-circle-check"></i> Finalizado
+    </a>
+
+</div>
+
 <div class="row">
 
-    {% for task in get_task %}
+    {% for task in task %}
 
     <div class="col-md-3 mb-4">
         <div class="card card-tarefa h-100 shadow">

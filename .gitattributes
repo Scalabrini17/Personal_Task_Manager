@@ -1,0 +1,23 @@
+# .gitattributes
+# Ajusta como o GitHub Linguist calcula as porcentagens de linguagem do repositório.
+# Isso NÃO afeta a execução do projeto, apenas a estatística exibida na página do GitHub.
+
+# --- CSS ---
+static/css/* linguist-vendored
+static/**/*.css linguist-vendored
+*.min.css linguist-vendored
+
+# --- JS  ---
+static/js/* linguist-vendored
+*.min.js linguist-vendored
+
+# --- Templates HTML do Django ---
+# Templates Django geralmente têm bastante HTML "estrutural" que infla a métrica.
+# linguist-documentation remove da contagem de linguagem principal.
+templates/**/*.html linguist-documentation
+
+# --- Garante que os arquivos Python sejam sempre contados normalmente ---
+*.py linguist-detectable=true
+
+# --- Normalização de fim de linha (boa prática, opcional) ---
+* text=auto eol=lf
