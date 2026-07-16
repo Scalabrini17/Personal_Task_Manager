@@ -24,9 +24,9 @@ Este projeto foi concebido com o intuito de aplicar e aprofundar conhecimentos e
 
 ---
 ## 🔄 Últimas Atualizações
-- Migração do Banco de dados do SQLite(padão django) para postgreSQL
 - Os campos de edição das Tarefas estão funcionando sem limpar quando vai editar. 
 - Melhora visual dos templates e sidebar adicionada
+- Novo recurso de alertas. Uma nova forma do sistema se comunicar com o usuário e o mesmo poder entender o que está acontecendo quando faz uma ação dentro do sistema
 ---
 
 ## ✨ Funcionalidades

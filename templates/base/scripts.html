@@ -1,9 +1,59 @@
 <script>
-    setTimeout(function() {
-        document.querySelectorAll('.alert').forEach(function(alerta) {
-            alerta.remove();
-        });
-    }, 3000);
-</script>
 
-<!-- Para fazer um teste do commit  -->
+document.querySelectorAll(".notification").forEach(function(notification){
+
+    let tempoRestante = 5000;
+
+    let inicio = Date.now();
+
+    let timeout = iniciarTimeout();
+
+    function iniciarTimeout(){
+
+        return setTimeout(fecharNotificacao, tempoRestante);
+
+    }
+
+    function fecharNotificacao(){
+
+        notification.classList.add("hide");
+
+        setTimeout(function(){
+
+            notification.remove();
+
+        },300);
+
+    }
+
+    notification.addEventListener("mouseenter", function(){
+
+        clearTimeout(timeout);
+
+        tempoRestante -= Date.now() - inicio;
+
+        notification.querySelector(".notification-progress").style.animationPlayState = "paused";
+
+    });
+
+    notification.addEventListener("mouseleave", function(){
+
+        inicio = Date.now();
+
+        timeout = iniciarTimeout();
+
+        notification.querySelector(".notification-progress").style.animationPlayState = "running";
+
+    });
+
+    notification.querySelector(".notification-close").addEventListener("click", function(){
+
+        clearTimeout(timeout);
+
+        fecharNotificacao();
+
+    });
+
+});
+
+</script>
