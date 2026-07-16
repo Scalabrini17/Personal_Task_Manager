@@ -5,6 +5,9 @@
               <a class="nav-link" href="{% url 'task:home' %}"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
           </li>
           <li class="nav-item">
+              <a class="nav-link" href="{% url 'task:dashboard' %}"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+          </li>
+          <li class="nav-item">
               <a class="nav-link" href="{% url 'task:task' %}"><i class="fa-solid fa-list-check me-2"></i>Tarefa</a>
           </li>
           <li class="nav-item">
@@ -28,6 +31,7 @@
       <div class="offcanvas-body">
           <ul class="nav flex-column">
               <li class="nav-item"><a class="nav-link" href="{% url 'task:home' %}"><i class="fa-solid fa-house me-2"></i>Página Inicial</a></li>
+              <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-chart-line">Dashboard</i>
               <li class="nav-item"><a class="nav-link" href="{% url 'task:task' %}"><i class="fa-solid fa-list-check me-2"></i>Tarefa</a></li>
               <li class="nav-item"><a class="nav-link" href="{% url 'task:add_task' %}"><i class="fa-solid fa-plus me-2"></i>Nova Tarefa</a></li>
               <li class="nav-item"><a class="nav-link" href="{% url 'task:task_finalizada' %}"><i class="fa-solid fa-check-double me-2"></i>Finalizadas</a></li>

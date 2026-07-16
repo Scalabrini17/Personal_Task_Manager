@@ -14,5 +14,6 @@ urlpatterns = [
     path('taskFinalizada/', views.task_finalizada, name ='task_finalizada'),
     path('mandarTaskLixo/<int:id>/', views.mandar_task_lixo, name = 'mandarTaskLixo'),
     path('lixeiraTask', views.lixeira_task, name = 'lixeiraTask'),
-    path('restaurarTask/<int:id>/', views.restaurar_task, name = 'restaurarTask')
+    path('restaurarTask/<int:id>/', views.restaurar_task, name = 'restaurarTask'),
+    path('dashboard', views.dashboard, name = 'dashboard'),
 ]

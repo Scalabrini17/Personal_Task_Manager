@@ -118,3 +118,19 @@ def restaurar_task(request, id):
     task.save()
     messages.success(request, 'Task restaurada com sucesso!')
     return redirect('task:lixeiraTask')
+
+def dashboard(request):
+    task = Task.objects.all()
+
+    status = {
+        'em_espera': Task.objects.filter(status = Status.EM_ESPERA).count(),
+        'iniciada': Task.objects.filter(status = Status.INICIADO).count(),
+        'finalizada': Task.objects.filter(status = Status.FINALIZADO).count()
+    }
+
+    context = {
+        'task': task,
+        'status': status
+    }
+
+    return render(request, 'task/dashboard.html', context)

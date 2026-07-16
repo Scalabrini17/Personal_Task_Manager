@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 class="mb-4">Dashboard</h1>
+
+<div class="row mb-4">
+
+    <div class="col-md-4 mb-4">
+        <div class="card card-tarefa h-100 shadow">
+            <i class="fa-solid fa-hourglass-half fs-2"></i>
+            <h2 class="fs-1">{{ status.em_espera }}</h2>
+            <p class="mb-0">Em Espera</p>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card card-tarefa h-100 shadow">
+            <i class="fa-solid fa-spinner fs-2"></i>
+            <h2 class="fs-1">{{ status.iniciada }}</h2>
+            <p class="mb-0">Iniciada</p>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card card-tarefa h-100 shadow">
+            <i class="fa-solid fa-circle-check fs-2"></i>
+            <h2 class="fs-1">{{ status.finalizada }}</h2>
+            <p class="mb-0">Finalizada</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
