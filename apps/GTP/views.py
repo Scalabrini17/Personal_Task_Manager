@@ -40,9 +40,14 @@ def view_task(request):
     elif status == Status.FINALIZADO:
         task = task.filter(status = Status.FINALIZADO)
 
+    q = request.GET.get('q')
+    if q:
+         task = task.filter(nome__icontains = q)
+
     context = {
         'task': task,
-        'status': status
+        'status': status,
+        'q': q
     }
 
     return render(request, 'task/task.html', context)
