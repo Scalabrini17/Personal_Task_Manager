@@ -24,7 +24,6 @@ Este projeto foi concebido com o intuito de aplicar e aprofundar conhecimentos e
 
 ---
 ## 🔄 Últimas Atualizações
-- Melhora visual dos templates e sidebar adicionada
 - Novo recurso de alertas. Uma nova forma do sistema se comunicar com o usuário e o mesmo poder entender o que está acontecendo quando faz uma ação dentro do sistema
 - Dashboard adicionado ao sistema
 - Página de Tarefas agora com filtro de status / Retirado página de tarefas finalizadas
@@ -165,7 +164,6 @@ Certifique-se de ter o [Python](https://www.python.org/downloads/) e o [Git](htt
 
 ## 🔮 Updates Futuros
 
-- Módulo de tarefa: Pesquisa por nome.
 - Módulo de tarefa: Filtros por prioridade.
 - Módulo de tarefa: Ordenação por prazo
 - Implementação de um sistema de autenticação e registro de usuários.
