@@ -27,6 +27,7 @@ Este projeto foi concebido com o intuito de aplicar e aprofundar conhecimentos e
 - Novo recurso de alertas. Uma nova forma do sistema se comunicar com o usuário e o mesmo poder entender o que está acontecendo quando faz uma ação dentro do sistema
 - Dashboard adicionado ao sistema
 - Página de Tarefas agora com filtro de status / Retirado página de tarefas finalizadas
+- Teste de nova Branch (GitHub)
 ---
 
 ## ✨ Funcionalidades
